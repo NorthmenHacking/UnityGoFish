@@ -7,6 +7,7 @@ public class CardController : MonoBehaviour {
 	private CardHand hand;
 
 	public float rotSpeed = 1F;
+	public float moveSpeed = 5F;
 
 	void Start () {
 
@@ -20,7 +21,10 @@ public class CardController : MonoBehaviour {
 
 			Vector3 delta = this.hand.target.position - this.transform.position;
 			Quaternion target = Quaternion.LookRotation(delta);
+
 			this.transform.rotation = Quaternion.Slerp(this.transform.rotation, target, this.rotSpeed * Time.deltaTime);
+			this.transform.position = Vector3.Lerp(this.transform.position, hand.transform.position, this.moveSpeed * Time.deltaTime);
+
 
 		}
 
@@ -33,8 +37,7 @@ public class CardController : MonoBehaviour {
 		this.hand = hand;
 		this.rb.isKinematic = (hand != null);
 
-		this.transform.SetParent(hand.transform);
-		this.transform.position = hand.transform.position;
+		this.transform.SetParent(hand.transform, true);
 
 	}
 
