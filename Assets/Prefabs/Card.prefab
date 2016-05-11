@@ -28,6 +28,7 @@ GameObject:
   - 65: {fileID: 6566312}
   - 114: {fileID: 11494928}
   - 114: {fileID: 11460300}
+  - 114: {fileID: 11450990}
   m_Layer: 8
   m_Name: Card
   m_TagString: Card
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148106}
   m_LocalRotation: {x: -1.78813949e-07, y: .707106829, z: -.707106769, w: -2.98023259e-08}
-  m_LocalPosition: {x: -.582000017, y: 1.39900005, z: -.651000023}
+  m_LocalPosition: {x: .915000021, y: 1.39900005, z: .143000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424546}
@@ -230,6 +231,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11450990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe56ba283aaeba54b8fdeaec5ed44dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: .100000001
+  speed: 2.5
 --- !u!114 &11460300
 MonoBehaviour:
   m_ObjectHideFlags: 1
