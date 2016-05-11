@@ -6,6 +6,7 @@ public class CardHand : MonoBehaviour {
 
 	public List<CardController> cards = new List<CardController>();
 	public Transform target;
+	public Transform discardTransform;
 
 	public float cardSpacing;
 
@@ -44,6 +45,9 @@ public class CardHand : MonoBehaviour {
 
 		this.cards.Remove(card);
 		card.SetHand(null);
+
+		LerpTo lt = card.GetComponent<LerpTo>();
+		lt.Run(this.discardTransform, false);
 
 	}
 
