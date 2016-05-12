@@ -248,7 +248,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489824, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11460300, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: targetHand
@@ -550,7 +550,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489824, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 148106, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: m_Name
@@ -606,7 +606,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489824, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11460300, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: targetHand
@@ -656,7 +656,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489824, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11460300, guid: 754a6ca68789cd248aa2abf21cb0145b, type: 2}
       propertyPath: targetHand
