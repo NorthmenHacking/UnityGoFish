@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 424546}
   - 95: {fileID: 9552370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,10 @@ GameObject:
   - 54: {fileID: 5416248}
   - 65: {fileID: 6566312}
   - 114: {fileID: 11494928}
-  m_Layer: 0
+  - 114: {fileID: 11460300}
+  m_Layer: 8
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +45,7 @@ GameObject:
   - 4: {fileID: 434662}
   - 33: {fileID: 3370730}
   - 23: {fileID: 2390786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +62,7 @@ GameObject:
   - 4: {fileID: 413834}
   - 33: {fileID: 3327776}
   - 23: {fileID: 2388010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}

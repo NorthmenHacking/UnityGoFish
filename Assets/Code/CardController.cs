@@ -19,14 +19,16 @@ public class CardController : MonoBehaviour {
 
 	void Update () {
 
-		if (this.hand != null) {
+		if (this.hand != null && this.rb != null) {
 
+			// Position
+			Vector3 targetPos = this.hand.GetCardPosition(this);
+			this.transform.position = Vector3.Lerp(this.transform.position, targetPos, this.moveSpeed * Time.deltaTime);
+
+			// Rotation
 			Vector3 delta = this.hand.target.position - this.transform.position;
 			Quaternion target = Quaternion.LookRotation(delta);
-
 			this.transform.rotation = Quaternion.Slerp(this.transform.rotation, target, this.rotSpeed * Time.deltaTime);
-			this.transform.position = Vector3.Lerp(this.transform.position, hand.transform.position, this.moveSpeed * Time.deltaTime);
-
 
 		}
 
