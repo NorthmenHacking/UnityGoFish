@@ -44,6 +44,9 @@ public class Dealer : MonoBehaviour {
 					yield return new WaitForSeconds(this.delayEachCard);
 					ch.AddCard(card.GetComponent<CardController>());
 
+					ClickAddHand cah = card.GetComponent<ClickAddHand>();
+					cah.targetHand = ch;
+
 					this.cardsDealt++;
 					this.UpdateScale();
 
