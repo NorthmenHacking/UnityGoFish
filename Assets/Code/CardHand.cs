@@ -26,7 +26,7 @@ public class CardHand : MonoBehaviour {
 		if (!this.cards.Contains (cc)) return Vector3.zero;
 		int index = this.cards.FindIndex(o => cc == o);
 
-		Vector3 increment = this.transform.right * -1 * this.cardSpacing;
+		Vector3 increment = this.transform.right * this.cardSpacing;
 		Vector3 minPos = this.transform.position - (increment * ((this.cards.Count - 1F) / 2F));
 
 		return minPos + (increment * index);
