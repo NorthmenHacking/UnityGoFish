@@ -217,9 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ab08e8e52bfb148968c505f3297128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 0}
-  - {fileID: 0}
+  cards: []
   target: {fileID: 0}
   cardSpacing: .600000024
 --- !u!1001 &100100000

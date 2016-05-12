@@ -40,4 +40,11 @@ public class CardHand : MonoBehaviour {
 
 	}
 
+	public void RemoveCard(CardController card) {
+
+		this.cards.Remove(card);
+		card.SetHand(null);
+
+	}
+
 }

@@ -13,11 +13,7 @@ public class ClickAddHand : MonoBehaviour {
 		if (cc.hand == null) {
 			this.targetHand.AddCard(cc);
 		} else {
-
-			// FIXME
-			this.targetHand.cards.Remove(cc);
-			cc.SetHand(null);
-
+			this.targetHand.RemoveCard(cc);
 		}
 
 	}
