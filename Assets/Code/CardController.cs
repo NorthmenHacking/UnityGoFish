@@ -4,7 +4,9 @@ using System.Collections;
 public class CardController : MonoBehaviour {
 
 	private Rigidbody rb;
-	private CardHand hand;
+
+	[System.NonSerialized]
+	public CardHand hand;
 
 	public float rotSpeed = 1F;
 	public float moveSpeed = 5F;
@@ -34,10 +36,10 @@ public class CardController : MonoBehaviour {
 
 		Debug.Log("Hand is now " + hand + " for " + this + "!");
 
+		this.rb = this.GetComponent<Rigidbody> ();
+
 		this.hand = hand;
 		this.rb.isKinematic = (hand != null);
-
-		this.transform.SetParent(hand.transform, true);
 
 	}
 

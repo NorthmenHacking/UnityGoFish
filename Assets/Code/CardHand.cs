@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CardHand : MonoBehaviour {
 
-	public CardController[] cards;
+	public List<CardController> cards = new List<CardController>();
 	public Transform target;
-	
-	void Start () {
 
+	public float cardSpacing;
+
+	void Start () {
+		
 		foreach (CardController cc in cards) {
 			cc.SetHand(this);
 		}
@@ -16,6 +19,13 @@ public class CardHand : MonoBehaviour {
 
 	void Update () {
 	
+	}
+
+	public void AddCard(CardController card) {
+
+		this.cards.Add(card);
+		card.SetHand(this);
+
 	}
 
 }
