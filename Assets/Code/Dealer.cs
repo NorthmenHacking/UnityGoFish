@@ -92,7 +92,12 @@ namespace NorthmenGoFish.Unity {
 			
 			CardType drawn = this.deck[0];
 			this.deck.RemoveAt(0);
-			
+
+			// Remove the deck if we are empty.
+			if (this.deck.Count <= 0) {
+				GameObject.Destroy (this.gameObject);
+			}
+
 			return drawn;
 			
 		}
