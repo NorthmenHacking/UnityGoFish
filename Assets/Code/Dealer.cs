@@ -15,13 +15,30 @@ namespace NorthmenGoFish.Unity {
 		
 		public float delayEachCard = 1F;
 		
-		private int cardsTotal;
+		private int cardsDealtInitially;
 		private int cardsDealt;
+		
+		private List<CardType> deck = new List<CardType>(); // 0 is the higheset value.
 		
 		void Start() {
 			
-			this.cardsTotal = (int) (this.dealCycles * this.cardsPerDeal * this.hands.Count);
+			List<CardType> cardsUnshuffled = new List<CardType>();
+			foreach (CardType ct in Cards.CARDS) {
+				cardsUnshuffled.Add(ct);
+			}
 			
+			// Add a random card until they're all gone.
+			while (cardsUnshuffled.Count > 0) {
+				
+				int removed = Random.Range(0, cardsUnshuffled.Count);
+				
+				CardType type = cardsUnshuffled[removed];
+				cardsUnshuffled.RemoveAt(removed);
+				deck.Add(type);
+				
+			}
+			
+			this.cardsDealtInitially = (int) (this.dealCycles * this.cardsPerDeal * this.hands.Count);
 			this.StartCoroutine("DealPattern");
 			
 		}
@@ -44,7 +61,9 @@ namespace NorthmenGoFish.Unity {
 						card.transform.rotation = this.spawnTransform.rotation;
 						
 						yield return new WaitForSeconds(this.delayEachCard);
-						ch.AddCard(card.GetComponent<CardController>());
+						CardController cc = card.GetComponent<CardController>();
+						cc.SetCardType(this.DrawCardType());
+						ch.AddCard(cc);
 						
 						ClickAddHand cah = card.GetComponent<ClickAddHand>();
 						cah.targetHand = ch;
@@ -64,8 +83,17 @@ namespace NorthmenGoFish.Unity {
 		
 		private void UpdateScale() {
 			
-			float percentage = ((float) (this.cardsTotal - this.cardsDealt)) / ((float) this.cardsTotal);
+			float percentage = ((float) (this.cardsDealtInitially - this.cardsDealt)) / ((float) this.cardsDealtInitially);
 			this.transform.localScale = new Vector3 (1, percentage, 1);
+			
+		}
+		
+		private CardType DrawCardType() {
+			
+			CardType drawn = this.deck[0];
+			this.deck.RemoveAt(0);
+			
+			return drawn;
 			
 		}
 		

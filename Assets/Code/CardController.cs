@@ -9,21 +9,17 @@ namespace NorthmenGoFish.Unity {
 		
 		[System.NonSerialized]
 		public CardHand hand;
+		public CardType cardType;
 		
 		public float rotSpeed = 1F;
 		public float moveSpeed = 5F;
 		
 		private CardDisplay display;
-		private CardType cardType;
 		
 		void Start () {
 			
 			this.rb = this.GetComponent<Rigidbody>();
-			
 			this.display = this.GetComponentInChildren<CardDisplay>();
-			this.cardType = Cards.CARDS[Random.Range(0, Cards.CARDS.Length)];
-			
-			this.display.UpdateDisplay(this.cardType);
 			
 		}
 		
@@ -44,6 +40,7 @@ namespace NorthmenGoFish.Unity {
 			
 		}
 		
+		// Could be an attribute.
 		public void SetHand(CardHand hand) {
 			
 			Debug.Log("Hand is now " + hand + " for " + this + "!");
@@ -52,6 +49,14 @@ namespace NorthmenGoFish.Unity {
 			
 			this.hand = hand;
 			this.rb.isKinematic = (hand != null);
+			
+		}
+		
+		// Could be an attribute.
+		public void SetCardType(CardType type) {
+			
+			this.cardType = type;
+			this.display.UpdateDisplay(this.cardType);
 			
 		}
 		
