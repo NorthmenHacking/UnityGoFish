@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace NorthmenGoFish {
+﻿namespace NorthmenGoFish {
 
 	public class CardType {
 
@@ -131,46 +128,64 @@ namespace NorthmenGoFish {
 			ACE_SPADE,
 			TWO_SPADE,
 			THREE_SPADE,
-			FOUR_DIAMOND,
-			FIVE_DIAMOND,
-			SIX_DIAMOND,
-			SEVEN_DIAMOND,
-			EIGHT_DIAMOND,
-			NINE_DIAMOND,
-			TEN_DIAMOND,
-			JACK_DIAMOND,
-			QUEEN_DIAMOND,
-			KING_DIAMOND,
+			FOUR_SPADE,
+			FIVE_SPADE,
+			SIX_SPADE,
+			SEVEN_SPADE,
+			EIGHT_SPADE,
+			NINE_SPADE,
+			TEN_SPADE,
+			JACK_SPADE,
+			QUEEN_SPADE,
+			KING_SPADE,
 
 		};
 
 	}
 
-	public enum CardSuit {
+	public class CardSuit {
 
-		Heart,
-		Diamond,
-		Club,
-		Spade
-
+		public static readonly CardSuit Heart = new CardSuit("Heart");
+		public static readonly CardSuit Diamond = new CardSuit("Diamond");
+		public static readonly CardSuit Club = new CardSuit("Club");
+		public static readonly CardSuit Spade = new CardSuit("Spade");
+		
+		public readonly string name;
+		
+		public CardSuit(string name) {
+			this.name = name;
+		}
+		
 	}
 
-	public enum CardValue {
-
-		Ace,
-		Two,
-		Three,
-		Four,
-		Five,
-		Six,
-		Seven,
-		Eight,
-		Nine,
-		Ten,
-		Jack,
-		Queen,
-		King
-
+	public class CardValue {
+		
+		public static readonly CardValue Ace = new CardValue("Ace", 'A', 1);
+		public static readonly CardValue Two = new CardValue("Two", '2', 2);
+		public static readonly CardValue Three = new CardValue("Three", '3', 3);
+		public static readonly CardValue Four = new CardValue("Four", '4', 4);
+		public static readonly CardValue Five = new CardValue("Five", '5', 5);
+		public static readonly CardValue Six = new CardValue("Six", '6', 6);
+		public static readonly CardValue Seven = new CardValue("Seven", '7', 7);
+		public static readonly CardValue Eight = new CardValue("Eight", '8', 8);
+		public static readonly CardValue Nine = new CardValue("Nine", '9', 9);
+		public static readonly CardValue Ten = new CardValue("Ten", 'X', 10);
+		public static readonly CardValue Jack = new CardValue("Jack", 'J', 11);
+		public static readonly CardValue Queen = new CardValue("Queen", 'Q', 12);
+		public static readonly CardValue King = new CardValue("King", 'K', 13);
+		
+		public readonly string name;
+		public readonly char icon;
+		public readonly int numericValue;
+		
+		public CardValue(string name, char icon, int val) {
+		
+			this.name = name;
+			this.icon = icon;
+			this.numericValue = val;
+			
+		}
+		
 	}
 
 }

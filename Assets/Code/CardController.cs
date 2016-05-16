@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using NorthmenGoFish;
+using NorthmenGoFish.Unity;
 
 public class CardController : MonoBehaviour {
 
@@ -10,17 +12,25 @@ public class CardController : MonoBehaviour {
 
 	public float rotSpeed = 1F;
 	public float moveSpeed = 5F;
-
+	
+	private CardDisplay display;
+	private CardType cardType;
+	
 	void Start () {
-
+		
 		this.rb = this.GetComponent<Rigidbody>();
-
+		
+		this.display = this.GetComponentInChildren<CardDisplay>();
+		this.cardType = Cards.CARDS[Random.Range(0, Cards.CARDS.Length)];
+		
+		this.display.UpdateDisplay(this.cardType);
+		
 	}
 
 	void Update () {
-
+		
 		if (this.hand != null && this.rb != null) {
-
+			
 			// Position
 			Vector3 targetPos = this.hand.GetCardPosition(this);
 			this.transform.position = Vector3.Lerp(this.transform.position, targetPos, this.moveSpeed * Time.deltaTime);
