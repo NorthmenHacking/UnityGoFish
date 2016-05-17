@@ -33,6 +33,8 @@ namespace NorthmenGoFish.Unity {
 				
 			}
 			
+			Debug.DrawLine(this.transform.position, this.target.position, Color.yellow);
+			
 		}
 		
 		public void Run(Transform trans) {

@@ -36,14 +36,20 @@ namespace NorthmenGoFish.Unity {
 
 		}
 
-		void Start () {
+		void Start() {
 			
 			foreach (CardController cc in cards) {
 				cc.SetHand(this);
 			}
 			
 		}
-
+		
+		void Update() {
+			
+			this.Simplify();
+			
+		}
+		
 		public Vector3 GetCardPosition(CardController cc) {
 			
 			if (!this.cards.Contains(cc)) return Vector3.zero;
@@ -115,6 +121,55 @@ namespace NorthmenGoFish.Unity {
 			
 			LerpTo lt = card.GetComponent<LerpTo>();
 			lt.Run(this.discardTransform, false);
+			
+		}
+		
+		public void Simplify() {
+			
+			Dictionary<CardValue, int> counts = new Dictionary<CardValue, int>();
+			
+			foreach (CardController cc in this.cards) {
+				
+				if (counts.ContainsKey(cc.cardType.Value)) {
+					counts[cc.cardType.Value]++;
+				} else {
+					counts[cc.cardType.Value] = 1;
+				}
+				
+			}
+			
+			List<CardController> removed = new List<CardController>();
+			
+			foreach (CardValue vc in counts.Keys) {
+				
+				int count = counts[vc];
+				
+				if (count >= 4) {
+					
+					Debug.Log("Found 4 matching cards in " + this + " of type " + vc.name + "!");
+					
+					foreach (CardController cc in this.cards) {
+						
+						if (cc.cardType.Value == vc) {
+							
+							LerpTo lt = cc.GetComponent<LerpTo>();
+							lt.Run(this.discardTransform);
+							
+							// Queue it up to remove it from the list.
+							removed.Add(cc);
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+			// Remove the card so we don't get any race conditions.
+			foreach (CardController toRemove in removed) {
+				this.RemoveCard(toRemove);
+			}
 			
 		}
 		
