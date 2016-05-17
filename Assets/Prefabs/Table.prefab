@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452874}
   - 114: {fileID: 11499822}
+  - 114: {fileID: 11475472}
   m_Layer: 0
   m_Name: Dealer
   m_TagString: Untagged
@@ -443,13 +444,26 @@ MonoBehaviour:
   cardSpacing: .75
   backwardsSpacing: .25
   upSpacing: 0
---- !u!114 &11499822
+--- !u!114 &11475472
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137012}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e5e6b01b2ab149b2af64c0975f13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInitial: 1
+  next: {fileID: 0}
+--- !u!114 &11499822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137012}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0079009bf673520439828fa88c899996, type: 3}
   m_Name: 

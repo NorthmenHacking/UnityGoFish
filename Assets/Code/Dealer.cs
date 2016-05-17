@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,7 +20,9 @@ namespace NorthmenGoFish.Unity {
 		private int cardsDealt;
 		
 		private List<CardType> deck = new List<CardType>(); // 0 is the higheset value.
-		
+
+		private Action dealCallback;
+
 		void Start() {
 			
 			List<CardType> cardsUnshuffled = new List<CardType>();
@@ -30,23 +33,25 @@ namespace NorthmenGoFish.Unity {
 			// Add a random card until they're all gone.
 			while (cardsUnshuffled.Count > 0) {
 				
-				int removed = Random.Range(0, cardsUnshuffled.Count);
+				int removed = UnityEngine.Random.Range(0, cardsUnshuffled.Count);
 				
 				CardType type = cardsUnshuffled[removed];
 				cardsUnshuffled.RemoveAt(removed);
 				deck.Add(type);
 				
 			}
-			
+
+		}
+
+		public void StartDealing(Action callback) {
+
+			this.dealCallback = callback;
+
 			this.cardsDealtInitially = (int) (this.dealCycles * this.cardsPerDeal * this.hands.Count);
 			this.StartCoroutine("DealPattern");
-			
+
 		}
-		
-		void Update() {
-			
-		}
-		
+
 		private IEnumerator DealPattern() {
 			
 			for (int i = 0; i < this.dealCycles; i++) {
@@ -76,6 +81,8 @@ namespace NorthmenGoFish.Unity {
 				}
 				
 			}
+
+			this.dealCallback.Invoke();
 
 		}
 		
