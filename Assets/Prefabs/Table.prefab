@@ -424,6 +424,8 @@ MonoBehaviour:
   target: {fileID: 0}
   discardTransform: {fileID: 492252}
   cardSpacing: .600000024
+  backwardsSpacing: 0
+  upSpacing: .200000003
 --- !u!114 &11468558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -439,6 +441,8 @@ MonoBehaviour:
   target: {fileID: 403714}
   discardTransform: {fileID: 492252}
   cardSpacing: .75
+  backwardsSpacing: .25
+  upSpacing: 0
 --- !u!114 &11499822
 MonoBehaviour:
   m_ObjectHideFlags: 1

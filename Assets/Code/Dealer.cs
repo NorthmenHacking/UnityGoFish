@@ -76,14 +76,12 @@ namespace NorthmenGoFish.Unity {
 				}
 				
 			}
-			
-			GameObject.Destroy(this.gameObject);
-			
+
 		}
 		
 		private void UpdateScale() {
 			
-			float percentage = ((float) (this.cardsDealtInitially - this.cardsDealt)) / ((float) this.cardsDealtInitially);
+			float percentage = ((float) (this.deck.Count)) / ((float) (this.deck.Count + this.cardsDealt));
 			this.transform.localScale = new Vector3 (1, percentage, 1);
 			
 		}
