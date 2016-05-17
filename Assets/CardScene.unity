@@ -204,6 +204,14 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1377911548}
+    - target: {fileID: 11499822, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
+      propertyPath: dealCycles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499822, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
+      propertyPath: cardsPerDeal
+      value: 26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
   m_IsPrefabParent: 0
@@ -327,6 +335,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &944905994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 944905996}
+  - 108: {fileID: 944905995}
+  m_Layer: 0
+  m_Name: CardLights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &944905995
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 944905994}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 5, y: 5}
+--- !u!4 &944905996
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 944905994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1377911548}
+  m_RootOrder: 0
 --- !u!1 &982646105
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +527,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -482,8 +550,9 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377911543}
   m_LocalRotation: {x: -.29883635, y: .640856206, z: -.298836172, w: -.640856504}
-  m_LocalPosition: {x: 3, y: 3.5, z: -0}
+  m_LocalPosition: {x: 3.29099989, y: 3.84800005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 944905996}
   m_Father: {fileID: 0}
   m_RootOrder: 2
