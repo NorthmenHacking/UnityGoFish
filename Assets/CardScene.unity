@@ -204,14 +204,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1377911548}
-    - target: {fileID: 11499822, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
-      propertyPath: dealCycles
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499822, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
-      propertyPath: cardsPerDeal
-      value: 26
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5366be16ffc8a4fb7840078640d94a, type: 2}
   m_IsPrefabParent: 0
