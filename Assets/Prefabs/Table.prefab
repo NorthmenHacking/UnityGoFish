@@ -513,7 +513,7 @@ MonoBehaviour:
   hands:
   - {fileID: 11406834}
   - {fileID: 11468558}
-  dealCycles: 20
+  dealCycles: 5
   cardsPerDeal: 1
   delayEachCard: .25
 --- !u!1001 &100100000
