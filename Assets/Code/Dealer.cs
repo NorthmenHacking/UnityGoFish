@@ -70,9 +70,6 @@ namespace NorthmenGoFish.Unity {
 						cc.SetCardType(this.DrawCardType());
 						ch.AddCard(cc);
 						
-						ClickAddHand cah = card.GetComponent<ClickAddHand>();
-						cah.targetHand = ch;
-						
 						this.cardsDealt++;
 						this.UpdateScale();
 						
@@ -81,7 +78,9 @@ namespace NorthmenGoFish.Unity {
 				}
 				
 			}
-
+			
+			this.hands.ForEach(h => h.Simplify());
+			
 			this.dealCallback.Invoke();
 
 		}
