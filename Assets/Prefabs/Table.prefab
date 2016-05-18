@@ -442,7 +442,7 @@ MonoBehaviour:
   isInitial: 0
   next: {fileID: 0}
   opponent: {fileID: 11468558}
-  dealer: {fileID: 0}
+  dealer: {fileID: 11499822}
 --- !u!114 &11468558
 MonoBehaviour:
   m_ObjectHideFlags: 1

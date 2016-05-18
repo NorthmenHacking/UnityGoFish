@@ -23,6 +23,8 @@ namespace NorthmenGoFish.Unity {
 		
 		private Action dealCallback;
 		
+		private GameObject preparedCard;
+		
 		public int CardsDealtInitially {
 			get { return this.cardsDealtInitially; }
 		}
@@ -64,18 +66,17 @@ namespace NorthmenGoFish.Unity {
 					
 					for (int j = 0; j < this.cardsPerDeal; j++) {
 						
-						GameObject card = (GameObject) GameObject.Instantiate(this.cardPrefab);
-						
-						card.transform.position = this.spawnTransform.position;
-						card.transform.rotation = this.spawnTransform.rotation;
-						
+						GameObject card = this.PrepareCard();
 						yield return new WaitForSeconds(this.delayEachCard);
+						
 						CardController cc = card.GetComponent<CardController>();
 						cc.SetCardType(this.DrawCardType());
 						ch.AddCard(cc);
 						
 						this.cardsDealt++;
 						this.UpdateScale();
+						
+						this.preparedCard = null;
 						
 					}
 					
@@ -84,6 +85,8 @@ namespace NorthmenGoFish.Unity {
 			}
 			
 			this.hands.ForEach(h => h.Simplify());
+			
+			this.PrepareCard();
 			
 			this.dealCallback.Invoke();
 
@@ -107,6 +110,41 @@ namespace NorthmenGoFish.Unity {
 			}
 			
 			return drawn;
+			
+		}
+		
+		private GameObject PrepareCard() {
+			
+			if (this.preparedCard == null) {
+				
+				// Spawn and position.
+				GameObject card = (GameObject) GameObject.Instantiate(this.cardPrefab);
+				card.transform.position = this.spawnTransform.position;
+				card.transform.rotation = this.spawnTransform.rotation;
+				
+				this.preparedCard = card;
+				
+			}
+			
+			return this.preparedCard;
+						
+		}
+		
+		public CardController DealOneOff() {
+			
+			GameObject card = this.PrepareCard();
+			
+			// Populate.
+			CardController cc = card.GetComponent<CardController>();
+			cc.SetCardType(this.DrawCardType());
+			
+			// Cleanup.
+			this.cardsDealt++;
+			this.UpdateScale();
+			this.preparedCard = null;
+			
+			this.PrepareCard();
+			return cc;
 			
 		}
 		

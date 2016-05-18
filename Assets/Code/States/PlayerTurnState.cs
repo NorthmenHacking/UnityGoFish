@@ -41,7 +41,10 @@ namespace NorthmenGoFish.Unity {
 				} else {
 					
 					// Or "go fish".
-					// TODO Make the dealer draw the card.
+					CardController fish = this.dealer.DealOneOff();
+					this.hand.AddCard(fish);
+					
+					Debug.Log("Fished card: " + fish);
 					
 				}
 				
