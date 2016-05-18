@@ -20,9 +20,13 @@ namespace NorthmenGoFish.Unity {
 		private int cardsDealt;
 		
 		private List<CardType> deck = new List<CardType>(); // 0 is the higheset value.
-
+		
 		private Action dealCallback;
-
+		
+		public int CardsDealtInitially {
+			get { return this.cardsDealtInitially; }
+		}
+		
 		void Start() {
 			
 			List<CardType> cardsUnshuffled = new List<CardType>();
@@ -40,18 +44,18 @@ namespace NorthmenGoFish.Unity {
 				deck.Add(type);
 				
 			}
-
+			
 		}
-
+		
 		public void StartDealing(Action callback) {
-
+			
 			this.dealCallback = callback;
-
+			
 			this.cardsDealtInitially = (int) (this.dealCycles * this.cardsPerDeal * this.hands.Count);
 			this.StartCoroutine("DealPattern");
-
+			
 		}
-
+		
 		private IEnumerator DealPattern() {
 			
 			for (int i = 0; i < this.dealCycles; i++) {
@@ -96,12 +100,12 @@ namespace NorthmenGoFish.Unity {
 			
 			CardType drawn = this.deck[0];
 			this.deck.RemoveAt(0);
-
+			
 			// Remove the deck if we are empty.
 			if (this.deck.Count <= 0) {
 				GameObject.Destroy (this.gameObject);
 			}
-
+			
 			return drawn;
 			
 		}

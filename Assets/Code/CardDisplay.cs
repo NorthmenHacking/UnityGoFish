@@ -6,8 +6,6 @@ namespace NorthmenGoFish.Unity {
 	
 	public class CardDisplay : MonoBehaviour {
 		
-		private bool inited = false;
-		
 		private Text suit;
 		private Text value;
 		private Text number;
