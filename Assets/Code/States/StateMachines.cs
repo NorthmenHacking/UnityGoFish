@@ -58,6 +58,8 @@ namespace NorthmenGoFish.Unity {
 		public CardHand opponent;
 		public Dealer dealer;
 		
+		public string winSceneName;
+		
 		protected CardHand hand;
 		
 	}

@@ -166,9 +166,9 @@ namespace NorthmenGoFish.Unity {
 				
 			}
 			
-			// Remove the card so we don't get any race conditions.
+			// Actually discard the cards.
 			foreach (CardController toRemove in removed) {
-				this.RemoveCard(toRemove);
+				toRemove.Discard();
 			}
 			
 		}

@@ -6,4 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MainMenu.unity
+  - enabled: 1
     path: Assets/CardScene.unity
+  - enabled: 1
+    path: Assets/Win.unity
+  - enabled: 1
+    path: Assets/Lose.unity

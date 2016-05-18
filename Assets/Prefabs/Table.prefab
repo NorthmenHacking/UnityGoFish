@@ -444,6 +444,10 @@ MonoBehaviour:
   next: {fileID: 11489290}
   opponent: {fileID: 11468558}
   dealer: {fileID: 11499822}
+  winSceneName: Win
+  secondsToDeliver: .75
+  secondsToFishing: .5
+  secondsToExit: 1
 --- !u!114 &11468558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,7 +493,9 @@ MonoBehaviour:
   next: {fileID: 11432334}
   opponent: {fileID: 11406834}
   dealer: {fileID: 11499822}
+  winSceneName: Lose
   secondsToPick: 1
+  secondsToDeliver: 1.5
   secondsToExit: .5
 --- !u!114 &11499822
 MonoBehaviour:
@@ -507,7 +513,7 @@ MonoBehaviour:
   hands:
   - {fileID: 11406834}
   - {fileID: 11468558}
-  dealCycles: 5
+  dealCycles: 20
   cardsPerDeal: 1
   delayEachCard: .25
 --- !u!1001 &100100000

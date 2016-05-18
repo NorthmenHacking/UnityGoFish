@@ -7,6 +7,7 @@ namespace NorthmenGoFish.Unity {
 	public class AiTurnState : GameStateNode {
 		
 		public float secondsToPick;
+		public float secondsToDeliver;
 		public float secondsToExit;
 		
 		protected override void OnEnter(StateNode prev) {
@@ -28,6 +29,10 @@ namespace NorthmenGoFish.Unity {
 			CardValue val = picked.cardType.Value;
 			List<CardController> opponentMatches = this.opponent.GetCardsOfValue(val);
 			
+			TurnSelector.INSTANCE.Text = "<i>Got any " + val.name + "s?</i>";
+			
+			yield return new WaitForSeconds(this.secondsToDeliver);
+			
 			if (opponentMatches.Count > 0) {
 				
 				// Take the cards.
@@ -37,8 +42,6 @@ namespace NorthmenGoFish.Unity {
 					this.hand.AddCard(match);
 					
 				});
-				
-				this.hand.Simplify();
 				
 			} else {
 				
@@ -50,7 +53,15 @@ namespace NorthmenGoFish.Unity {
 				
 			}
 			
+			yield return new WaitForSeconds(this.secondsToDeliver);
+			
+			this.hand.Simplify();
 			yield return new WaitForSeconds(this.secondsToExit);
+			
+			// Win!
+			if (this.hand.cards.Count == 0) {
+				Application.LoadLevel(this.winSceneName);
+			}
 			
 			this.next.Enter(this);
 			

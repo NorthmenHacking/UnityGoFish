@@ -122,6 +122,9 @@ namespace NorthmenGoFish.Unity {
 				card.transform.position = this.spawnTransform.position;
 				card.transform.rotation = this.spawnTransform.rotation;
 				
+				CardController cc = card.GetComponent<CardController>();
+				cc.dealer = this;
+				
 				this.preparedCard = card;
 				
 			}
@@ -145,6 +148,16 @@ namespace NorthmenGoFish.Unity {
 			
 			this.PrepareCard();
 			return cc;
+			
+		}
+		
+		public void AddCardToBottom(CardController cc) {
+			
+			CardType type = cc.cardType;
+			cc.SetHand(null);
+			
+			this.deck.Add(type);
+			GameObject.Destroy(cc.gameObject);
 			
 		}
 		
