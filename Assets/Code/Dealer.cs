@@ -115,7 +115,7 @@ namespace NorthmenGoFish.Unity {
 		
 		private GameObject PrepareCard() {
 			
-			if (this.preparedCard == null) {
+			if (this.preparedCard == null && this.deck.Count > 0) {
 				
 				// Spawn and position.
 				GameObject card = (GameObject) GameObject.Instantiate(this.cardPrefab);
