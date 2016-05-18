@@ -5,12 +5,7 @@ using System.Collections.Generic;
 namespace NorthmenGoFish.Unity {
 	
 	[RequireComponent(typeof(CardHand))]
-	public class PlayerTurnState : StateNode {
-		
-		public CardHand opponent;
-		public Dealer dealer;
-				
-		private CardHand hand;
+	public class PlayerTurnState : GameStateNode {
 		
 		protected override void OnEnter(StateNode prev) {
 			
@@ -44,9 +39,11 @@ namespace NorthmenGoFish.Unity {
 					CardController fish = this.dealer.DealOneOff();
 					this.hand.AddCard(fish);
 					
-					Debug.Log("Fished card: " + fish);
+					Debug.Log("Player fished card: " + fish);
 					
 				}
+				
+				this.next.Enter(this);
 				
 			};
 			

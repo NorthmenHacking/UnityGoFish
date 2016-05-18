@@ -29,7 +29,7 @@ namespace NorthmenGoFish.Unity {
 			get { return this.cardsDealtInitially; }
 		}
 		
-		void Start() {
+		void Awake() {
 			
 			List<CardType> cardsUnshuffled = new List<CardType>();
 			foreach (CardType ct in Cards.CARDS) {
@@ -54,7 +54,7 @@ namespace NorthmenGoFish.Unity {
 			this.dealCallback = callback;
 			
 			this.cardsDealtInitially = (int) (this.dealCycles * this.cardsPerDeal * this.hands.Count);
-			this.StartCoroutine("DealPattern");
+			this.StartCoroutine(this.DealPattern());
 			
 		}
 		

@@ -51,5 +51,15 @@ namespace NorthmenGoFish.Unity {
 		}
 		
 	}
-
+	
+	[RequireComponent(typeof(CardController))]
+	public abstract class GameStateNode : StateNode {
+		
+		public CardHand opponent;
+		public Dealer dealer;
+		
+		protected CardHand hand;
+		
+	}
+	
 }
