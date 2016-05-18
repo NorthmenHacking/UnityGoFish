@@ -13,7 +13,9 @@ namespace NorthmenGoFish.Unity {
 		public float cardSpacing;
 		public float backwardsSpacing;
 		public float upSpacing;
-
+		
+		public Action<CardController> cardClickCallback;
+		
 		public int UniqueValues {
 
 			get {
