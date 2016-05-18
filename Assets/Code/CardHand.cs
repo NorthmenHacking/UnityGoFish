@@ -112,6 +112,9 @@ namespace NorthmenGoFish.Unity {
 			this.cards.Add(card);
 			card.SetHand(this);
 			
+			LerpTo lt = card.GetComponent<LerpTo>();
+			lt.enabled = false;
+			
 		}
 		
 		public void RemoveCard(CardController card) {
