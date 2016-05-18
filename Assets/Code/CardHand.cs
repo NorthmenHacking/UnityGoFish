@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,38 +18,32 @@ namespace NorthmenGoFish.Unity {
 		public Action<CardController> cardClickCallback;
 		
 		public int UniqueValues {
-
+			
 			get {
-
+				
 				List<CardValue> valsEncountered = new List<CardValue>();
-
+				
 				foreach (CardController cc in this.cards) {
-
+					
 					CardValue cv = cc.cardType.Value;
-
+					
 					if (!valsEncountered.Contains(cv)) {
 						valsEncountered.Add(cv);
 					}
-
+					
 				}
-
+				
 				return valsEncountered.Count;
-
+				
 			}
-
+			
 		}
-
+		
 		void Start() {
 			
 			foreach (CardController cc in cards) {
 				cc.SetHand(this);
 			}
-			
-		}
-		
-		void Update() {
-			
-			this.Simplify();
 			
 		}
 		
@@ -65,50 +60,50 @@ namespace NorthmenGoFish.Unity {
 			return minPos + (sideIncrement * sideIndex) + (backwardsIncrement * backIndex);
 			
 		}
-
+		
 		private int GetCardValueIndex(CardValue val) {
-
+			
 			List<CardValue> valsEncountered = new List<CardValue>();
-
+			
 			foreach (CardController cc in this.cards) {
-
+				
 				CardValue cv = cc.cardType.Value;
-
+				
 				if (cv == val) {
 					return valsEncountered.Count;
 				} else {
-
+					
 					// Add it to the list.
 					if (!valsEncountered.Contains(cv)) {
 						valsEncountered.Add(cv);
 					}
-
+					
 				}
-
+				
 			}
-
+			
 			return -1;
-
+			
 		}
-
+		
 		private int GetPreviousCardsOfValueInDeck(CardType type) {
-
+			
 			int cards = 0;
-
+			
 			foreach (CardController cc in this.cards) {
-
+				
 				if (cc.cardType == type) {
 					return cards;
 				} else if (cc.cardType.Value == type.Value) {
 					cards++;
 				}
-
+				
 			}
-
+			
 			return -1;
-
+			
 		}
-
+		
 		public void AddCard(CardController card) {
 			
 			this.cards.Add(card);
@@ -176,6 +171,10 @@ namespace NorthmenGoFish.Unity {
 				this.RemoveCard(toRemove);
 			}
 			
+		}
+		
+		public List<CardController> GetCardsOfValue(CardValue val) {
+			return this.cards.FindAll((CardController obj) => (obj.cardType.Value == val));
 		}
 		
 	}
