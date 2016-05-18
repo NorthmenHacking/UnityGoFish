@@ -8,7 +8,7 @@ public class TurnSelector : MonoBehaviour {
 
 	private Text text;
 
-	void Start () {
+	void Awake() {
 
 		this.text = this.GetComponent<Text>();
 
