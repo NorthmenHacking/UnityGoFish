@@ -61,8 +61,8 @@ GameObject:
   - 54: {fileID: 5416248}
   - 65: {fileID: 6566312}
   - 114: {fileID: 11494928}
-  - 114: {fileID: 11460300}
   - 114: {fileID: 11450990}
+  - 114: {fileID: 11403968}
   m_Layer: 8
   m_Name: Card
   m_TagString: Card
@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148106}
   m_LocalRotation: {x: .554655612, y: -.0643299073, z: .0148782078, w: -.829456151}
-  m_LocalPosition: {x: .913467288, y: 1.38045597, z: .142236993}
+  m_LocalPosition: {x: 1.00133622, y: .919999957, z: -.17856811}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424546}
@@ -302,6 +302,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11403968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cfaf535d8dc5041996933ab990afd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11421360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,18 +427,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &11460300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53982617a6177ea4a8b21c238b89cad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetHand: {fileID: 0}
 --- !u!114 &11484276
 MonoBehaviour:
   m_ObjectHideFlags: 1

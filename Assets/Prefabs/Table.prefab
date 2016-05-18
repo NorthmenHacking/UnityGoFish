@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 451400}
   - 114: {fileID: 11406834}
+  - 114: {fileID: 11432334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -427,6 +428,21 @@ MonoBehaviour:
   cardSpacing: .600000024
   backwardsSpacing: 0
   upSpacing: .200000003
+--- !u!114 &11432334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b224d492c83ec841868c45697ef882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInitial: 0
+  next: {fileID: 0}
+  opponent: {fileID: 11468558}
+  dealer: {fileID: 0}
 --- !u!114 &11468558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInitial: 1
-  next: {fileID: 0}
+  next: {fileID: 11432334}
 --- !u!114 &11499822
 MonoBehaviour:
   m_ObjectHideFlags: 1
